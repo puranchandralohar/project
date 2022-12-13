@@ -1,0 +1,21 @@
+.header {
+    background-color: #052da3;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav_list {
+    gap: 1rem;
+}
+
+.sign_In {
+    background-color: #da8e84;
+    color: #fff;
+    font-weight: 800;
+}
+
+.sign_In:hover {
+    background-color: #da6454;
+}
