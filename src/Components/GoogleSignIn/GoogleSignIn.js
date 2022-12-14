@@ -1,17 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 
 import { Dashboard } from "../Body/Dashboard";
 import { SignIn } from "../SignInForm/SignInForm";
 import { useNavigate } from "react-router-dom";
 
+import { MainContext } from "../../Context/MainContext";
+
+
 function GoogleSignIn() {
-  const [user, setUser] = useState({});
+  const {user,setUser} = useContext(MainContext)
+  // const [user, setUser] = useState({});
 
   const [isShow, setIsShow] = useState(false)
 
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
 
@@ -43,19 +47,23 @@ function GoogleSignIn() {
   // const handleRedirect=()=>{
   //   navigate("/dashboard");
   // }
-   
+  useEffect(()=>{
+    if(Object.keys(user).length !== 0){     
+      navigate("/dashboard")
+    }
+  })
   
 
   return (
     <div className="App">
       <div id="signInDiv"></div>
-       {Object.keys(user).length !== 0 && (
+       {/* {Object.keys(user).length !== 0 && (
           <>
             <Dashboard user={user} setUser={setUser}/> 
           </>
          
       )
-    }
+    } */}
     </div>
   );
 }

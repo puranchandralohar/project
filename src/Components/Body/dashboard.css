@@ -1,0 +1,28 @@
+.dashboard{
+    margin: 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.dashboard_header{
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    border-bottom: 0.1rem solid #cacaca;
+}
+
+.user_name{
+    color:#da8e84;
+}
+
+.dashboard_header img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.signout{
+    background-color: #4848d3;
+    color:#fff;
+}
