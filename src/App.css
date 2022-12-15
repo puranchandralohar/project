@@ -9,11 +9,6 @@
   display: flex;
 }
 
-a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .btn {
   padding: 0.5rem 1rem;
   cursor: pointer;

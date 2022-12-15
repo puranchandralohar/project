@@ -4,11 +4,17 @@ const MainContext = createContext();
 
 function MainStateProvider({ children }) {
     const [user, setUser] = useState({});
+
+    const [events, setEvents] = useState({ 
+      title:"",
+      date:"",
+      cost:""
+      });
  
 
   return (
     <MainContext.Provider
-      value={{user, setUser}}
+      value={{user, setUser, events, setEvents}}
     >
       {children}
     </MainContext.Provider>

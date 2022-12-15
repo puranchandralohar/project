@@ -8,6 +8,12 @@
 
 .nav_list {
     gap: 1rem;
+    
+}
+
+.header a{
+    text-decoration: none;
+    color:#fff;
 }
 
 .sign_In {

@@ -80,3 +80,9 @@
 .setup_class:hover{
     background-color: #e75c4a;
 }
+
+.main_calender{
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
