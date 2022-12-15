@@ -10,9 +10,7 @@ import { MainContext } from "../../Context/MainContext";
 
 function GoogleSignIn() {
   const {user,setUser} = useContext(MainContext)
-  // const [user, setUser] = useState({});
 
-  const [isShow, setIsShow] = useState(false)
 
 
     const navigate = useNavigate();
@@ -25,7 +23,6 @@ function GoogleSignIn() {
     var userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
-    setIsShow(true);
   }
 
  
@@ -44,9 +41,7 @@ function GoogleSignIn() {
     
   }, []);
 
-  // const handleRedirect=()=>{
-  //   navigate("/dashboard");
-  // }
+ 
   useEffect(()=>{
     if(Object.keys(user).length !== 0){     
       navigate("/dashboard")
@@ -57,13 +52,6 @@ function GoogleSignIn() {
   return (
     <div className="App">
       <div id="signInDiv"></div>
-       {/* {Object.keys(user).length !== 0 && (
-          <>
-            <Dashboard user={user} setUser={setUser}/> 
-          </>
-         
-      )
-    } */}
     </div>
   );
 }

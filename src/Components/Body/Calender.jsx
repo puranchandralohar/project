@@ -5,13 +5,13 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 
 
 import { MainContext } from "../../Context/MainContext";
-import { useEffect } from 'preact/hooks';
 
 const Calender = () => {
 
-    const {events} = useContext(MainContext)
+    const { events, allEvents } = useContext(MainContext)
 
-    console.log(events)
+
+    console.log("allEvents",allEvents)
 
   return (
     <>
@@ -23,7 +23,7 @@ const Calender = () => {
         //   { title: 'event 1', date: '2022-12-01' },
         //   { title: 'event 2', date: '2022-12-02' }
         // ]}
-        events={[events]}
+        events={allEvents}
         
       />
     </>

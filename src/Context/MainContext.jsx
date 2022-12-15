@@ -10,11 +10,13 @@ function MainStateProvider({ children }) {
       date:"",
       cost:""
       });
+
+    const [allEvents,setAllevents] = useState([])
  
 
   return (
     <MainContext.Provider
-      value={{user, setUser, events, setEvents}}
+      value={{user, setUser, events, setEvents, allEvents, setAllevents}}
     >
       {children}
     </MainContext.Provider>

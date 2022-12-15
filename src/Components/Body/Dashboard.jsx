@@ -1,9 +1,6 @@
-import React, { useState }from 'react'
-import { useContext } from 'react';
+import React, { useState, useContext }from 'react'
 import { useNavigate } from 'react-router-dom';
-
 import  Calender from './Calender';
-
 import { MainContext } from "../../Context/MainContext";
 
 import "./dashboard.css"
@@ -11,7 +8,7 @@ import "./dashboard.css"
 export const Dashboard = () => {
 
 
-  const {user,setUser,events,setEvents} = useContext(MainContext)
+  const { user,setUser,events,setEvents, allEvents, setAllevents } = useContext(MainContext)
 
   const navigate = useNavigate()
 
@@ -24,16 +21,10 @@ export const Dashboard = () => {
           setEvents({ ...events, [e.target.name]: e.target.value });
       }
 
-      // console.log(events)
-
-      // const data = []
-
-      // const handleSubmit=()=>{
-
-      //     data.push(events)
-      // }
-
-      // console.log("Data->>>",data)
+      const handleSubmit=()=>{
+        setAllevents([...allEvents,events])
+        setEvents("");
+      }
   
   return (
     <div className='dashboard'>
@@ -64,7 +55,7 @@ export const Dashboard = () => {
               </div>
 
               <div className="input_elements">
-                <button className='btn setup_class' >Shedule My Class</button>
+                <button className='btn setup_class' onClick={handleSubmit}>Shedule My Class</button>
               </div>
               
             </div>
