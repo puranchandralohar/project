@@ -27,6 +27,10 @@
     color:#fff;
 }
 
+.signout:hover{
+    background-color: #1e1ee4;
+}
+
 
 .sidebar{
     margin:1rem;
@@ -63,5 +67,16 @@
 .input_elements input{
     padding: 0.5rem 1rem;
     border:1px solid #cacaca;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
+    width: 100%;
+}
+
+
+.setup_class{
+    background-color: #da8e84;
+    color:#fff;
+}
+
+.setup_class:hover{
+    background-color: #e75c4a;
 }

@@ -1,6 +1,9 @@
+
 import React from 'react'
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { Calender } from './Calender';
 
 import { MainContext } from "../../Context/MainContext";
 
@@ -14,8 +17,7 @@ export const Dashboard = () => {
 
     const handleSignout = (e) => {
         setUser({});
-        navigate("/signin")
-        
+        navigate("/signin")  
       };
 
   return (
@@ -37,16 +39,21 @@ export const Dashboard = () => {
             
               <div className="input_elements">
                 <label htmlFor="class_time">Timing</label>
-                <input type="datetime-local" name="class_time" id="class_time" />
+                <input type="date" name="class_time" id="class_time" />
               </div>
 
               <div className="input_elements">
                 <label htmlFor="class_cost">Cost</label>
-                <input type="text" name="class_cost" id="class_cost" />
+                <input type="text" name="class_cost" id="class_cost" value={0}/>
+              </div>
+
+              <div className="input_elements">
+                <button className='btn setup_class'>Shedule My Class</button>
               </div>
               
             </div>
          </div>
+         <Calender/>
     </div>
   )
 }
