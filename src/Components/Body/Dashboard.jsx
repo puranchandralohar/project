@@ -23,7 +23,6 @@ export const Dashboard = () => {
 
       const handleSubmit=()=>{
         setAllevents([...allEvents,events])
-        setEvents("");
       }
   
   return (
