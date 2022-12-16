@@ -8,12 +8,12 @@
 
 .nav_list {
     gap: 1rem;
-    
+
 }
 
-.header a{
+.header a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
 
 .sign_In {

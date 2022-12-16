@@ -1,22 +1,19 @@
-import React from 'react'
-import { useState ,useContext} from 'react'
-import FullCalendar from '@fullcalendar/react' // must go before plugins
-import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
-
+import React from "react";
+import { useState, useContext } from "react";
+import FullCalendar from "@fullcalendar/react"; // must go before plugins
+import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 
 import { MainContext } from "../../Context/MainContext";
 
 const Calender = () => {
+  const { events, allEvents } = useContext(MainContext);
 
-    const { events, allEvents } = useContext(MainContext)
-
-
-    console.log("allEvents",allEvents)
+  console.log("allEvents", allEvents);
 
   return (
     <>
-         <FullCalendar
-        plugins={[ dayGridPlugin ]}
+      <FullCalendar
+        plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         weekends={false}
         // events={[
@@ -24,10 +21,9 @@ const Calender = () => {
         //   { title: 'event 2', date: '2022-12-02' }
         // ]}
         events={allEvents}
-        
       />
     </>
-  )
-}
+  );
+};
 
-export default Calender
+export default Calender;

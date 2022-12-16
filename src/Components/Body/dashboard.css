@@ -1,87 +1,88 @@
-.dashboard{
+.dashboard {
     margin: 1rem;
     max-width: 1200px;
     margin: auto;
 }
 
-.dashboard_header{
+.dashboard_header {
     padding: 1rem;
     justify-content: center;
     align-items: center;
-    gap:2rem;
+    gap: 2rem;
     border-bottom: 0.1rem solid #cacaca;
 }
 
-.user_name{
-    color:#da8e84;
+.user_name {
+    color: #da8e84;
 }
 
-.dashboard_header img{
+.dashboard_header img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
 }
 
-.signout{
+.signout {
     background-color: #4848d3;
-    color:#fff;
+    color: #fff;
 }
 
-.signout:hover{
+.signout:hover {
     background-color: #1e1ee4;
 }
 
 
-.sidebar{
-    margin:1rem;
+.sidebar {
+    margin: 1rem;
     padding: 1rem;
-    border:1px solid #cacaca;
+    border: 1px solid #cacaca;
     width: 25%;
     height: 60vh;
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
     box-shadow: 0 0 0.5rem #cacaca;
     background-color: #4848d3;
 }
 
 
-.sidebar_title{
-    color:#da8e84;
+.sidebar_title {
+    color: #da8e84;
 }
 
 
-.sidebar_tasks{
+.sidebar_tasks {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
 }
-.sidebar_tasks label{
+
+.sidebar_tasks label {
     display: block;
     padding: 0.5rem 0;
-    color:#fff;
+    color: #fff;
     font-weight: 600;
 }
 
-.input_elements input{
+.input_elements input {
     padding: 0.5rem 1rem;
-    border:1px solid #cacaca;
+    border: 1px solid #cacaca;
     border-radius: 0.2rem;
     width: 100%;
 }
 
 
-.setup_class{
+.setup_class {
     background-color: #da8e84;
-    color:#fff;
+    color: #fff;
 }
 
-.setup_class:hover{
+.setup_class:hover {
     background-color: #e75c4a;
 }
 
-.main_calender{
+.main_calender {
     padding: 1rem;
     width: 100%;
     height: 100%;

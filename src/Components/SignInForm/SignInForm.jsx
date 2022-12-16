@@ -1,10 +1,14 @@
-import React from "react";
+import { useState } from "react";
+import React, { useContext } from "react";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
+import { MainContext } from "../../Context/MainContext";
 
 import "./signinform.css";
 
 export const SignIn = () => {
-  // const [isShow, setIsShow] = useState(false)
+  const { usertype, setUsertype } = useContext(MainContext);
+
+  console.log("usertpe==", usertype);
 
   return (
     <main className="container flex">
@@ -31,8 +35,16 @@ export const SignIn = () => {
             <p>Or</p>
             <div className="user_container flex">
               <label for="usertype">Who are You:</label>
-              <select name="user" id="usertype">
-                <option value="Customer">Customer</option>
+              <select
+                name="user"
+                id="usertype"
+                value={usertype}
+                onChange={(e) => setUsertype(e.target.value)}
+              >
+                <option value="" selected disabled>
+                  Select Here
+                </option>
+                <option value="Student">Student</option>
                 <option value="Traineer">Traineer</option>
               </select>
             </div>

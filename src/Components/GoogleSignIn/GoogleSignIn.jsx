@@ -7,15 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 import { MainContext } from "../../Context/MainContext";
 
-
 function GoogleSignIn() {
-  const {user,setUser} = useContext(MainContext)
+  const { user, setUser, usertype, setUsertype } = useContext(MainContext);
 
-
-
-    const navigate = useNavigate();
-
-
+  const navigate = useNavigate();
 
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID Token" + response.credential);
@@ -24,8 +19,6 @@ function GoogleSignIn() {
     console.log(userObject);
     setUser(userObject);
   }
-
- 
 
   useEffect(() => {
     // global google
@@ -38,16 +31,16 @@ function GoogleSignIn() {
       theme: "outline",
       size: "large",
     });
-    
   }, []);
 
- 
-  useEffect(()=>{
-    if(Object.keys(user).length !== 0){     
-      navigate("/dashboard")
+  useEffect(() => {
+    if (Object.keys(user).length !== 0 && usertype === "Traineer") {
+      navigate("/dashboard");
     }
-  })
-  
+    if (Object.keys(user).length !== 0 && usertype === "Student") {
+      navigate("/users");
+    }
+  });
 
   return (
     <div className="App">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import './hero.css'
+import "./hero.css";
 
 export const Hero = () => {
   return (
@@ -16,9 +16,9 @@ export const Hero = () => {
               <h2>Get Started</h2>
             </div>
             <div>
-            <Link to="/signin">
-              <button className="hero_btn">Sign In</button>
-            </Link>
+              <Link to="/signin">
+                <button className="hero_btn">Sign In</button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
-.errorPage_section{
-    font-family:system-ui, sans-serif;
+.errorPage_section {
+    font-family: system-ui, sans-serif;
     background: #052da3;
     color: white;
     height: 100vh;
@@ -9,18 +9,18 @@
     padding: 2rem;
 }
 
-.errorPage_wrapper{
+.errorPage_wrapper {
     width: 40%;
     display: flex;
     flex-direction: column;
-    gap:1.2rem;
+    gap: 1.2rem;
 }
 
-.errorPage_wrapper h1{
+.errorPage_wrapper h1 {
     font-size: 5rem;
 }
 
-.errorPage_wrapper a{
-    color:#da8e84;
+.errorPage_wrapper a {
+    color: #da8e84;
     font-size: 2rem;
 }
