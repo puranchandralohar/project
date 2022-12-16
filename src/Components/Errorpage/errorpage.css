@@ -1,6 +1,6 @@
 .errorPage_section{
     font-family:system-ui, sans-serif;
-    background: #131417;
+    background: #052da3;
     color: white;
     height: 100vh;
     margin: 0;
@@ -16,6 +16,11 @@
     gap:1.2rem;
 }
 
+.errorPage_wrapper h1{
+    font-size: 5rem;
+}
+
 .errorPage_wrapper a{
-    color:cyan;
+    color:#da8e84;
+    font-size: 2rem;
 }

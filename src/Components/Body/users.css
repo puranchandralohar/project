@@ -1,0 +1,35 @@
+.user_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_container h2{
+    color: #636363;
+}
+
+table {
+	border-collapse: collapse;
+    font-family: Tahoma,sans-serif;
+    width: 70vw;
+}
+table td {
+	padding: 1rem;
+}
+table thead td {
+	background-color: #da8e84;;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 0.8rem;
+	border: 1px solid #da8e84;;
+}
+table tbody td {
+	color: #636363;
+	border: 1px solid #dddfe1;
+}
+table tbody tr {
+	background-color: #f9fafb;
+}
+table tbody tr:nth-child(odd) {
+	background-color: #ffffff;
+}

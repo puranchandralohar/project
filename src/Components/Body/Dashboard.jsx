@@ -7,6 +7,7 @@ import "./dashboard.css"
 
 export const Dashboard = () => {
 
+  const [items, setItems] = useState([]);
 
   const { user,setUser,events,setEvents, allEvents, setAllevents } = useContext(MainContext)
 
@@ -23,7 +24,14 @@ export const Dashboard = () => {
 
       const handleSubmit=()=>{
         setAllevents([...allEvents,events])
+
+          let saveData = JSON.parse(localStorage.getItem('events') || '[]');
+          saveData.push(events);
+          localStorage.setItem('events', JSON.stringify(saveData))
+      
       }
+
+
   
   return (
     <div className='dashboard'>

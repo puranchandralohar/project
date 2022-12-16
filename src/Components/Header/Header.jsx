@@ -21,8 +21,8 @@ export const Header = () => {
         <Link to="/signin">
           <button className="btn sign_In">Sign In</button>
         </Link>
-        <Link to="/">
-          <button className="btn">Trainners Area</button>
+        <Link to="/users">
+          <button className="btn">Users</button>
         </Link>
       </div>
       <Outlet />
