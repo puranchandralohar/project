@@ -15,6 +15,8 @@ function MainStateProvider({ children }) {
 
   const [usertype, setUsertype] = useState();
 
+  const[isLoggedin, setIsLoggedIn] = useState(false)
+
   return (
     <MainContext.Provider
       value={{
@@ -26,6 +28,8 @@ function MainStateProvider({ children }) {
         setAllevents,
         usertype,
         setUsertype,
+        isLoggedin,
+        setIsLoggedIn
       }}
     >
       {children}

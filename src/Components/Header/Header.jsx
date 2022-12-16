@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { MainContext } from "../../Context/MainContext";
 
 import "./header.css";
 
 export const Header = () => {
+
+  const { isLoggedin } = useContext(MainContext)
+
   return (
     <header class="header flex">
       <nav className="nav_list flex">
@@ -18,9 +22,11 @@ export const Header = () => {
         </Link>
       </h1>
       <div>
-        <Link to="/signin">
+        { 
+        !isLoggedin && <Link to="/signin">
           <button className="btn sign_In">Sign In</button>
         </Link>
+        }        
       </div>
       <Outlet />
     </header>

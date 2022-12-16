@@ -1,14 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-
-import { Dashboard } from "../Body/Dashboard";
-import { SignIn } from "../SignInForm/SignInForm";
 import { useNavigate } from "react-router-dom";
-
 import { MainContext } from "../../Context/MainContext";
 
 function GoogleSignIn() {
-  const { user, setUser, usertype, setUsertype } = useContext(MainContext);
+  const { user, setUser, usertype, setUsertype , isLoggedin, setIsLoggedIn } = useContext(MainContext);
 
   const navigate = useNavigate();
 
@@ -40,6 +36,7 @@ function GoogleSignIn() {
     if (Object.keys(user).length !== 0 && usertype === "Student") {
       navigate("/users");
     }
+    setIsLoggedIn(true)
   });
 
   return (
