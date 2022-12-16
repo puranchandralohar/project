@@ -40,3 +40,8 @@ table tbody tr {
 table tbody tr:nth-child(odd) {
 	background-color: #ffffff;
 }
+
+.cta_avl{
+	background-color: #609760;
+	color:#fff;
+}

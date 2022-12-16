@@ -44,6 +44,7 @@ export const Users = () => {
               <td>Class</td>
               <td>Date</td>
               <td>Fee</td>
+              <td>Status</td>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +54,7 @@ export const Users = () => {
                   <td>{title}</td>
                   <td>{date}</td>
                   <td>{cost}</td>
+                  <td><button className="btn cta_avl">Available</button></td>
                 </tr>
               );
             })}
