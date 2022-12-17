@@ -8,7 +8,7 @@ import { MainContext } from "../../Context/MainContext";
 const Calender = () => {
   const { events, allEvents } = useContext(MainContext);
 
-  console.log("allEvents", allEvents);
+  // console.log("allEvents", allEvents);
 
   return (
     <>

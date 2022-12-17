@@ -22,13 +22,31 @@ export const Dashboard = () => {
     setEvents({ ...events, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    setAllevents([...allEvents, events]);
 
-    let saveData = JSON.parse(localStorage.getItem("events") || "[]");
-    saveData.push(events);
-    localStorage.setItem("events", JSON.stringify(saveData));
-  };
+
+
+      const handleSubmit = () => {
+        setAllevents([...allEvents, events]);
+    
+    
+        let saveData = JSON.parse(localStorage.getItem("events") || "[]");
+        saveData.push(events);
+        localStorage.setItem("events", JSON.stringify(saveData));
+
+
+        
+        // let saveData=[];
+    
+      //   const userData = {
+      //     "email":"abc@gmail.com",
+      //     "data":saveData
+      //   }
+    
+      //   // let saveData = JSON.parse(localStorage.getItem("userData"));
+      //   saveData.push(events);
+      //   localStorage.setItem("userData", JSON.stringify(userData));
+      
+      };
 
   return (
     <div className="dashboard">

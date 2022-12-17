@@ -19,6 +19,7 @@ function MainStateProvider({ children }) {
 
   const [maxStudents, setMaxstudents] = useState(0)
 
+
   return (
     <MainContext.Provider
       value={{
