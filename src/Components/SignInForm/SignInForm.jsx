@@ -44,7 +44,7 @@ export const SignIn = () => {
                   Select Here
                 </option>
                 <option value="Student">Student</option>
-                <option value="Traineer">Traineer</option>
+                <option value="Trainer">Trainer</option>
               </select>
             </div>
             <GoogleSignIn />

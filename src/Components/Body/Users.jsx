@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../../Context/MainContext";
 
+import toast, { Toaster } from 'react-hot-toast';
+
 import "./users.css";
 
 export const Users = () => {
@@ -25,6 +27,8 @@ export const Users = () => {
 
   console.log(items);
 
+  const notify = () => toast.success('Congratulations!!..Your Session is Booked');
+
   return (
     <>
       <div className="dashboard_header flex">
@@ -44,6 +48,7 @@ export const Users = () => {
               <td>Class</td>
               <td>Date</td>
               <td>Fee</td>
+              <td>No of Students</td>
               <td>Status</td>
             </tr>
           </thead>
@@ -54,7 +59,10 @@ export const Users = () => {
                   <td>{title}</td>
                   <td>{date}</td>
                   <td>{cost}</td>
-                  <td><button className="btn cta_avl">Available</button></td>
+                  <td>2/5</td>
+                  <td><button className="btn cta_avl" onClick={notify}>Available</button>
+                  <Toaster />
+                  </td>
                 </tr>
               );
             })}

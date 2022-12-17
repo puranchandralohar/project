@@ -30,7 +30,7 @@ function GoogleSignIn() {
   }, []);
 
   useEffect(() => {
-    if (Object.keys(user).length !== 0 && usertype === "Traineer") {
+    if (Object.keys(user).length !== 0 && usertype === "Trainer") {
       navigate("/dashboard");
     }
     if (Object.keys(user).length !== 0 && usertype === "Student") {
