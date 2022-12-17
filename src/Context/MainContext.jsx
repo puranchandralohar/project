@@ -17,6 +17,8 @@ function MainStateProvider({ children }) {
 
   const[isLoggedin, setIsLoggedIn] = useState(false)
 
+  const [maxStudents, setMaxstudents] = useState(0)
+
   return (
     <MainContext.Provider
       value={{
@@ -29,7 +31,9 @@ function MainStateProvider({ children }) {
         usertype,
         setUsertype,
         isLoggedin,
-        setIsLoggedIn
+        setIsLoggedIn,
+        maxStudents,
+        setMaxstudents
       }}
     >
       {children}

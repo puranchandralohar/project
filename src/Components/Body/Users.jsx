@@ -9,7 +9,7 @@ import "./users.css";
 export const Users = () => {
   const [items, setItems] = useState([]);
 
-  const { user, setUser } = useContext(MainContext);
+  const { user, setUser, maxStudents, setMaxstudents } = useContext(MainContext);
 
   const navigate = useNavigate();
 
@@ -27,7 +27,15 @@ export const Users = () => {
 
   console.log(items);
 
-  const notify = () => toast.success('Congratulations!!..Your Session is Booked');
+  const notify = (() =>  {
+    if(maxStudents < 5){
+      setMaxstudents(maxStudents + 1)
+      toast.success('Congratulations!!..Your Session is Booked');
+    }
+    else{
+      toast.error('Sorry..Session is Full, Try Next Time');
+    }
+  });
 
   return (
     <>
@@ -59,9 +67,13 @@ export const Users = () => {
                   <td>{title}</td>
                   <td>{date}</td>
                   <td>{cost}</td>
-                  <td>2/5</td>
-                  <td><button className="btn cta_avl" onClick={notify}>Available</button>
-                  <Toaster />
+                  <td>{maxStudents}/5</td>
+                  <td>
+                    {
+                      maxStudents >=5 ? <button className="btn cta_full" onClick={notify}>Full</button> :
+                      <button className="btn cta_avl" onClick={notify}>Available</button>
+                    }             
+                    <Toaster />
                   </td>
                 </tr>
               );

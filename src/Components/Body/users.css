@@ -43,3 +43,8 @@ table tbody tr:nth-child(odd) {
 	background-color: #609760;
 	color:#fff;
 }
+
+.cta_full{
+	background-color: #cc3f3a;
+	color:#fff;
+}
