@@ -13,6 +13,8 @@ export const Users = () => {
 
   const navigate = useNavigate();
 
+  const redirect = useNavigate();
+
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("events"));
     if (items) {

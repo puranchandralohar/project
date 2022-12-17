@@ -37,7 +37,13 @@ function GoogleSignIn() {
       navigate("/users");
     }
     setIsLoggedIn(true)
+
+    localStorage.setItem("User", JSON.stringify(user));
+    
   });
+
+
+
 
   return (
     <div className="App">

@@ -4,6 +4,7 @@ import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 
 import { MainContext } from "../../Context/MainContext";
+import Swal from "sweetalert2";
 
 const Calender = () => {
   const { events, allEvents } = useContext(MainContext);
@@ -20,6 +21,19 @@ const Calender = () => {
         //   { title: 'event 1', date: '2022-12-01' },
         //   { title: 'event 2', date: '2022-12-02' }
         // ]}
+        
+        // Open Model
+
+        eventClick={function(arg) {
+          Swal.fire({
+            title: `Class-${events.title}`,
+            text: events.date,
+            text:`Cost-${events.cost}`,
+            type: 'success',
+            
+          })
+        }}
+
         events={allEvents}
       />
     </>

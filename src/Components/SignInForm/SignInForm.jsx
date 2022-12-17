@@ -7,7 +7,6 @@ import "./signinform.css";
 export const SignIn = () => {
   const { usertype, setUsertype } = useContext(MainContext);
 
-  console.log("usertpe==", usertype);
 
   return (
     <main className="container flex">

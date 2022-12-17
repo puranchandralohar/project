@@ -33,6 +33,10 @@ export const Dashboard = () => {
         saveData.push(events);
         localStorage.setItem("events", JSON.stringify(saveData));
 
+        // let username = user.name
+
+
+
 
         
         // let saveData=[];
@@ -45,7 +49,7 @@ export const Dashboard = () => {
       //   // let saveData = JSON.parse(localStorage.getItem("userData"));
       //   saveData.push(events);
       //   localStorage.setItem("userData", JSON.stringify(userData));
-      
+
       };
 
   return (
