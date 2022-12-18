@@ -39,12 +39,12 @@ table tbody tr:nth-child(odd) {
 	background-color: #ffffff;
 }
 
-.cta_avl{
+.cta_avl {
 	background-color: #609760;
-	color:#fff;
+	color: #fff;
 }
 
-.cta_full{
+.cta_full {
 	background-color: #cc3f3a;
-	color:#fff;
+	color: #fff;
 }

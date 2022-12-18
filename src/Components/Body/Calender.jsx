@@ -1,23 +1,20 @@
-import React, { useState,useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 
 import { MainContext } from "../../Context/MainContext";
 import Swal from "sweetalert2";
-import './calender.css'
+
+import "./calender.css";
 
 const Calender = () => {
-  const { events, allEvents, link} = useContext(MainContext);
-
   const [totalStudents, setTotalStudents] = useState();
-
+  const { events, allEvents, link } = useContext(MainContext);
 
   useEffect(() => {
-    let numbers = JSON.parse(localStorage.getItem('students'));
+    let numbers = JSON.parse(localStorage.getItem("students"));
     setTotalStudents(numbers);
-
   }, []);
-
 
   return (
     <>
@@ -26,17 +23,19 @@ const Calender = () => {
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         weekends={false}
-        
         // Open Model
 
-        eventClick={function(arg) {
+        eventClick={function (arg) {
           Swal.fire({
             title: `Class-${events.title}`,
-            html: `<div>Date-${events.date} </div> <div>Students-${totalStudents[events.title]}</div> <div> Cost-${events.cost}</div> <div>Class Link-${link}</div>`,
-            type: 'success',         
-          })
+            html: `<div>Date-${events.date} </div> <div>Students-${
+              totalStudents[events.title]
+            }</div> <div> Cost-${
+              events.cost
+            }</div> <div>Class Link-${link}</div>`,
+            type: "success",
+          });
         }}
-
         events={allEvents}
       />
     </>

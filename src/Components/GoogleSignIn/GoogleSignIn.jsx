@@ -1,18 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../../Context/MainContext";
 
 function GoogleSignIn() {
-  const { user, setUser, usertype, setUsertype , isLoggedin, setIsLoggedIn } = useContext(MainContext);
+  const { user, setUser, usertype, setUsertype, isLoggedin, setIsLoggedIn } =
+    useContext(MainContext);
 
   const navigate = useNavigate();
 
   function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID Token" + response.credential);
-
     var userObject = jwt_decode(response.credential);
-    console.log(userObject);
     setUser(userObject);
   }
 
@@ -36,14 +34,10 @@ function GoogleSignIn() {
     if (Object.keys(user).length !== 0 && usertype === "Student") {
       navigate("/users");
     }
-    setIsLoggedIn(true)
+    setIsLoggedIn(true);
 
     localStorage.setItem("User", JSON.stringify(user));
-    
   });
-
-
-
 
   return (
     <div className="App">

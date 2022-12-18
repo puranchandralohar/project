@@ -34,8 +34,8 @@
   width: 100%;
 }
 
-.buttons_group{
-  gap:1rem;
+.buttons_group {
+  gap: 1rem;
 }
 
 
@@ -54,7 +54,7 @@
 }
 
 
-.gt_btn:hover{
+.gt_btn:hover {
   background-color: #d87093a6;
   scale: 0.9;
 }

@@ -1,13 +1,12 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Calender from "./Calender";
+import Link from "./Link";
 import { MainContext } from "../../Context/MainContext";
 
 import "./dashboard.css";
-import Link from "./Link";
 
 export const Dashboard = () => {
-
   const { user, setUser, events, setEvents, allEvents, setAllevents } =
     useContext(MainContext);
 
@@ -82,7 +81,7 @@ export const Dashboard = () => {
               </button>
             </div>
           </div>
-            <Link/>
+          <Link />
         </div>
         <div className="main_calender">
           <Calender />

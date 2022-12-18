@@ -2,14 +2,15 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../../Context/MainContext";
 
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 import "./users.css";
 
 export const Users = () => {
   const [items, setItems] = useState([]);
 
-  const {user, setUser, maxStudents, setMaxstudents } = useContext(MainContext);
+  const { user, setUser, maxStudents, setMaxstudents } =
+    useContext(MainContext);
 
   const navigate = useNavigate();
 
@@ -25,27 +26,24 @@ export const Users = () => {
     navigate("/signin");
   };
 
-  const notify = ((e, title) =>  {
-    console.log(e.target.id)
-    if(!maxStudents[title]) {
+  const notify = (e, title) => {
+    if (!maxStudents[title]) {
       maxStudents[title] = 1;
-      toast.success('Congratulations!!..Your Session is Booked');
-    } else if(maxStudents[title] < 5){
-      maxStudents[title] ++;
-      toast.success('Congratulations!!..Your Session is Booked');
-    }
-    else{
-      toast.error('Sorry..Session is Full, Try Next Time');
+      toast.success("Congratulations!!..Your Session is Booked");
+    } else if (maxStudents[title] < 5) {
+      maxStudents[title]++;
+      toast.success("Congratulations!!..Your Session is Booked");
+    } else {
+      toast.error("Sorry..Session is Full, Try Next Time");
     }
     setMaxstudents(maxStudents);
-    localStorage.setItem('students', JSON.stringify(maxStudents));
+    localStorage.setItem("students", JSON.stringify(maxStudents));
     setItems([...items]);
-  });
+  };
 
-
-useEffect(() => {
-  localStorage.setItem('students', JSON.stringify(maxStudents));
-}, [maxStudents]);
+  useEffect(() => {
+    localStorage.setItem("students", JSON.stringify(maxStudents));
+  }, [maxStudents]);
 
   return (
     <>
@@ -71,21 +69,43 @@ useEffect(() => {
             </tr>
           </thead>
           <tbody>
-            {items.map(({ title, date, cost},index) => {
+            {items.map(({ title, date, cost }, index) => {
               return (
                 <tr key={index} id={index}>
                   <td>{title}</td>
                   <td>{date}</td>
                   <td>{cost}</td>
-                  <td id={index}>{maxStudents[title] ? maxStudents[title] : 0}/5</td>
+                  <td id={index}>
+                    {maxStudents[title] ? maxStudents[title] : 0}/5
+                  </td>
                   <td>
-                    {
-                      maxStudents[title] ?
-                        maxStudents[title] >= 5 ? 
-                          <button className="btn cta_full" onClick={(e)=>notify(e)} id={index}>Full</button> :
-                          <button className="btn cta_avl" onClick={(e) => notify(e,title)} id={index}>Available</button> :
-                        <button className="btn cta_avl" onClick={(e) => notify(e,title)} id={index}>Available</button>
-                    }             
+                    {maxStudents[title] ? (
+                      maxStudents[title] >= 5 ? (
+                        <button
+                          className="btn cta_full"
+                          onClick={(e) => notify(e)}
+                          id={index}
+                        >
+                          Full
+                        </button>
+                      ) : (
+                        <button
+                          className="btn cta_avl"
+                          onClick={(e) => notify(e, title)}
+                          id={index}
+                        >
+                          Available
+                        </button>
+                      )
+                    ) : (
+                      <button
+                        className="btn cta_avl"
+                        onClick={(e) => notify(e, title)}
+                        id={index}
+                      >
+                        Available
+                      </button>
+                    )}
                     <Toaster />
                   </td>
                 </tr>

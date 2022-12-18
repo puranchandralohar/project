@@ -5,8 +5,7 @@ import { MainContext } from "../../Context/MainContext";
 import "./header.css";
 
 export const Header = () => {
-
-  const { isLoggedin } = useContext(MainContext)
+  const { isLoggedin } = useContext(MainContext);
 
   return (
     <header class="header flex">
@@ -22,11 +21,11 @@ export const Header = () => {
         </Link>
       </h1>
       <div>
-        { 
-        !isLoggedin && <Link to="/signin">
-          <button className="btn sign_In">Sign In</button>
-        </Link>
-        }        
+        {!isLoggedin && (
+          <Link to="/signin">
+            <button className="btn sign_In">Sign In</button>
+          </Link>
+        )}
       </div>
       <Outlet />
     </header>
