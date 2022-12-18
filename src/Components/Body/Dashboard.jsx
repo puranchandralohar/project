@@ -4,9 +4,9 @@ import Calender from "./Calender";
 import { MainContext } from "../../Context/MainContext";
 
 import "./dashboard.css";
+import Link from "./Link";
 
 export const Dashboard = () => {
-  const [items, setItems] = useState([]);
 
   const { user, setUser, events, setEvents, allEvents, setAllevents } =
     useContext(MainContext);
@@ -22,35 +22,12 @@ export const Dashboard = () => {
     setEvents({ ...events, [e.target.name]: e.target.value });
   };
 
-
-
-
-      const handleSubmit = () => {
-        setAllevents([...allEvents, events]);
-    
-    
-        let saveData = JSON.parse(localStorage.getItem("events") || "[]");
-        saveData.push(events);
-        localStorage.setItem("events", JSON.stringify(saveData));
-
-        // let username = user.name
-
-
-
-
-        
-        // let saveData=[];
-    
-      //   const userData = {
-      //     "email":"abc@gmail.com",
-      //     "data":saveData
-      //   }
-    
-      //   // let saveData = JSON.parse(localStorage.getItem("userData"));
-      //   saveData.push(events);
-      //   localStorage.setItem("userData", JSON.stringify(userData));
-
-      };
+  const handleSubmit = () => {
+    setAllevents([...allEvents, events]);
+    let saveData = JSON.parse(localStorage.getItem("events") || "[]");
+    saveData.push(events);
+    localStorage.setItem("events", JSON.stringify(saveData));
+  };
 
   return (
     <div className="dashboard">
@@ -64,7 +41,7 @@ export const Dashboard = () => {
         </button>
       </div>
       <div className="flex">
-        <div className="sidebar">
+        <div className="sidebar flex">
           <div className="sidebar_title">
             <h2>Setup Class</h2>
           </div>
@@ -105,6 +82,7 @@ export const Dashboard = () => {
               </button>
             </div>
           </div>
+            <Link/>
         </div>
         <div className="main_calender">
           <Calender />

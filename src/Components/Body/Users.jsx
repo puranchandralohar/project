@@ -13,8 +13,6 @@ export const Users = () => {
 
   const navigate = useNavigate();
 
-  const redirect = useNavigate();
-
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("events"));
     if (items) {
@@ -27,15 +25,21 @@ export const Users = () => {
     navigate("/signin");
   };
 
-  const notify = ((e) =>  {
+  const notify = ((e, title) =>  {
     console.log(e.target.id)
-    if(maxStudents < 5){
-      setMaxstudents(maxStudents + 1)
+    if(!maxStudents[title]) {
+      maxStudents[title] = 1;
+      toast.success('Congratulations!!..Your Session is Booked');
+    } else if(maxStudents[title] < 5){
+      maxStudents[title] ++;
       toast.success('Congratulations!!..Your Session is Booked');
     }
     else{
       toast.error('Sorry..Session is Full, Try Next Time');
     }
+    setMaxstudents(maxStudents);
+    localStorage.setItem('students', JSON.stringify(maxStudents));
+    setItems([...items]);
   });
 
 
@@ -67,17 +71,20 @@ useEffect(() => {
             </tr>
           </thead>
           <tbody>
-            {items.map(({ title, date, cost}) => {
+            {items.map(({ title, date, cost},index) => {
               return (
-                <tr>
+                <tr key={index} id={index}>
                   <td>{title}</td>
                   <td>{date}</td>
                   <td>{cost}</td>
-                  <td>{maxStudents}/5</td>
+                  <td id={index}>{maxStudents[title] ? maxStudents[title] : 0}/5</td>
                   <td>
                     {
-                      maxStudents >=5 ? <button className="btn cta_full" onClick={(e)=>notify(e)}>Full</button> :
-                      <button className="btn cta_avl" onClick={notify}>Available</button>
+                      maxStudents[title] ?
+                        maxStudents[title] >= 5 ? 
+                          <button className="btn cta_full" onClick={(e)=>notify(e)} id={index}>Full</button> :
+                          <button className="btn cta_avl" onClick={(e) => notify(e,title)} id={index}>Available</button> :
+                        <button className="btn cta_avl" onClick={(e) => notify(e,title)} id={index}>Available</button>
                     }             
                     <Toaster />
                   </td>

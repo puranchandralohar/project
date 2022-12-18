@@ -17,7 +17,9 @@ function MainStateProvider({ children }) {
 
   const[isLoggedin, setIsLoggedIn] = useState(false)
 
-  const [maxStudents, setMaxstudents] = useState(0)
+  const [maxStudents, setMaxstudents] = useState({})
+
+  const [link, setLink] = useState('');
 
 
   return (
@@ -34,7 +36,9 @@ function MainStateProvider({ children }) {
         isLoggedin,
         setIsLoggedIn,
         maxStudents,
-        setMaxstudents
+        setMaxstudents,
+        link,
+        setLink
       }}
     >
       {children}
