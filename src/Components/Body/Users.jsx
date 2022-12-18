@@ -38,6 +38,11 @@ export const Users = () => {
     }
   });
 
+
+useEffect(() => {
+  localStorage.setItem('students', JSON.stringify(maxStudents));
+}, [maxStudents]);
+
   return (
     <>
       <div className="dashboard_header flex">

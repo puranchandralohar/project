@@ -2,7 +2,7 @@
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 
@@ -15,7 +15,7 @@
 }
 
 .hero_container {
-  background-image: url(https://images.pexels.com/photos/3803517/pexels-photo-3803517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-image: url(https://images.pexels.com/photos/6963098/pexels-photo-6963098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-attachment: scroll;
   background-size: cover;
   background-position: center;
@@ -29,9 +29,13 @@
   min-width: 100%;
   left: 0;
   top: 0;
-  background: rgba(0, 6, 87, 0.35);
+  background: rgba(0, 21, 114, 0.247);
   height: 100vh;
   width: 100%;
+}
+
+.buttons_group{
+  gap:1rem;
 }
 
 
@@ -45,12 +49,18 @@
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.2s;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
-.hero_btn:hover {
-  background-color: #aaaeec9f;
-  color:#eee;
+
+.gt_btn:hover{
+  background-color: #d87093a6;
+  scale: 0.9;
+}
+
+.sign_btn:hover {
+  background-color: #aaaeec91;
+  scale: 0.9;
 
 }
