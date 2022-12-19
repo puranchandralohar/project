@@ -51,7 +51,7 @@ export const Users = () => {
         <h3>
           Welcome! <span className="user_name">{user.name}</span>
         </h3>
-        <img src={user.picture} />
+        <img src={user.picture} alt={user.name}/>
         <button className="btn signout" onClick={(e) => handleSignout(e)}>
           Sign Out
         </button>
