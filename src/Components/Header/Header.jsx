@@ -17,7 +17,7 @@ export const Header = () => {
       </nav>
       <h1>
         <Link to="">
-          Logo<span>Here</span>
+          Code<span className="page_subtitle">Connect</span>
         </Link>
       </h1>
       <div>

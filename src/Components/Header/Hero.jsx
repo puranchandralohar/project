@@ -10,7 +10,7 @@ export const Hero = () => {
         <div class="hero_sub_container overlay">
           <div class="hero_title flex">
             <div>
-              <h1>Welcome to Web Development Journey</h1>
+              <h1>Welcome to <span>Web Development</span> Journey</h1>
             </div>
             <div>
               <h3>Build Your Career with us, Level up your skills, Start for Free</h3>
